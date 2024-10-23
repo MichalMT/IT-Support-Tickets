@@ -1,0 +1,19 @@
+@import './base.css';
+
+
+@media (min-width: 1024px) {
+
+}
+
+
+@media (max-width: 1160px) {
+    .container {
+        margin: 0 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 0 15px;
+    }
+}
