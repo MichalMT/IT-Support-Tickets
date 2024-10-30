@@ -77,7 +77,7 @@ const deleteTicket = asyncHandler(async (req, res) => {
 const createComment = asyncHandler(async (req, res) => {
     const ticket = await Ticket.findById(req.params.id);
     if (!ticket) {
-        return res.status(400);
+        res.status(400);
         throw new Error("Ticket not found");
     }
     ticket.comments.push({
@@ -98,7 +98,7 @@ const createComment = asyncHandler(async (req, res) => {
 const deleteComment = asyncHandler(async (req, res) => {
         const ticket = await Ticket.findById(req.params.id);
         if (!ticket) {
-            return res.status(400);
+            res.status(400);
             throw new Error("Ticket not found");
         }
         const comment = ticket.comments.id(req.params.commentId);
