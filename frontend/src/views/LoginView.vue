@@ -31,12 +31,17 @@
     if (route.query.password) {
       password.value = route.query.password;
     }
+
+    if (route.query.sessionExpired) {
+        errorMessage.value = 'Invalid token. Please log in again.';
+      }
   });
 
   const handleLogin = async () => {
     errorMessage.value = '';
     try {
       await login({ email: email.value, password: password.value });
+      errorMessage.value = '';
     } catch (error) {
       errorMessage.value = "Error. Invalid credentials. Please try again.";
     }

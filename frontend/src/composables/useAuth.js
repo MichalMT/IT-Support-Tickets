@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import axios from 'axios';
+import axios from '../axios';
 import { useRouter } from 'vue-router';
 import { useTickets } from './useTickets';
 
@@ -27,7 +27,7 @@ export function useAuth() {
       axios.defaults.headers.common['Authorization'] = `Bearer ${userToken}`;
 
       // Redirect to the dashboard after successful login
-      router.push('/');
+      router.replace({ path: '/', query: {} });
     } catch (error) {
       console.error('Failed to log in:', error);
       throw error;

@@ -54,7 +54,7 @@
   import { useTickets } from '../composables/useTickets';
   import Navbar from '../components/Navbar.vue';
   import moment from "moment";
-  import axios from 'axios';
+  import axios from '../axios';
 
   import { useAuth } from '../composables/useAuth';
   const { user } = useAuth();

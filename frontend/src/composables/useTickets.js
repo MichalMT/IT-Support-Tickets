@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import axios from 'axios';
+import axios from '../axios';
 
 const tickets = ref([]);
 
